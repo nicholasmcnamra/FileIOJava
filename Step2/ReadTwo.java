@@ -1,5 +1,7 @@
 package Step2;
 
+import Step4.ReadFour;
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
@@ -9,7 +11,8 @@ public class ReadTwo
     public static void main(String[] args)
     {
         try {
-            Scanner fileIn = new Scanner(new File("input.txt"));
+            Scanner fileIn = new Scanner(new File(ReadTwo.class.getResource("input.txt").getFile()));
+            // added ReadTwo.class.getResource().getFile because file was not being read when running source code
 
             while (fileIn.hasNext()) 
             {

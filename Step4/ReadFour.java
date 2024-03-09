@@ -15,20 +15,16 @@ public class ReadFour
             // values in the input file.
             int sum = 0;
             try {
-                Scanner fileIn = new Scanner(new File("input.txt"));
+                Scanner fileIn = new Scanner(new File(ReadFour.class.getResource("input.txt").getFile()));
 
                 while (fileIn.hasNext()) {
-
-                    String lineIn = fileIn.nextLine();
-                    String[] input = lineIn.split(",");
-                    for (int i = 0; i < input.length; i ++) {
-                        sum += Integer.parseInt(input[i]);
-                    }
-                    System.out.println(sum);
+                    int lineIn = fileIn.nextInt();
+                        sum += lineIn;
+                    System.out.println("Running total: " + sum);
                 }
             }
             catch (IOException e) {
-                System.out.println("File not found.");
+                System.out.println("File not found");
             }
         }
 }
